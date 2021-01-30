@@ -2,6 +2,8 @@ Getting Started With Multiple FileUploader in Mvc
 ===================================
 
 This File Uploader can help you to upload and send multiple files to server simultaneously.
+![](https://github.com/hamed-abdollahi/FileUploader/blob/main/2.png)
+
 
 ## Prerequisites
 * .Javascript
