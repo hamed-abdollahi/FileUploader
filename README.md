@@ -10,6 +10,7 @@ This File Uploader can help you to upload and send multiple files to server simu
 
 ## Usage
 * Add this tags to your html page whatewere you want
+```
 <style>
     .imgType {
         cursor: default;
