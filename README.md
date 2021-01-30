@@ -124,5 +124,5 @@ public ActionResult EditDocument(List<HttpPostedFileBase> FileSelector)
 ```
 
 ## Result
-![](https://github.com/hamedvb61/pagination/blob/master/FileUpload.png)
+![](https://github.com/hamed-abdollahi/FileUploader/blob/main/FileUpload.png)
 
