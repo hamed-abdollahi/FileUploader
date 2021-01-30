@@ -105,7 +105,7 @@
         var funcArr = [];
         var forms = $('.frm');
         if (forms.length == 0) {
-            alert(' فایلی وجود ندارد');
+            alert('There is no file!');
             return;
         }
         $('.rt').hide();
