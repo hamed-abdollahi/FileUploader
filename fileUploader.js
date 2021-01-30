@@ -90,21 +90,6 @@
         };
         onCreate(file);
     }
-        let file = realFile.files[0];
-        if (!file) return;
-        if (getFileExenctions().indexOf(getFileExt(file.name)) < 0) {
-            alert('فرمت فابل قبول نیست');
-            realFile.value = '';
-            return;
-        }
-        var fileSize = getExtSize(getFileExt(file.name))
-        if ((file.size / 1024) > fileSize) {
-            alert("حجم فایل زیاد است ، حداکثر حجم فایل 20 مگابایت می باشد");
-            realFile.value = '';
-            return false;
-        };
-        $('#dms_detID_fk').val(getExtId(getFileExt(file.name)));
-    }
     var onDeleteFile = function (e) {
         var frm = $(this).closest('.frm');
         frm.remove();
@@ -166,15 +151,15 @@
             funcArr.push(f)
         })
         $.when.apply($, funcArr).done(function () {
-            documentManagement.onLoad();
+            // do your stuff
         }).fail(function () {
-            alert(String.format('تعداد {0} فایل با خطا مواجه شد',cnt))
+            alert(String.format('One error has happened!'))
         });
     }
         var cnt = 0;
         var forms = $('.frm');
         if (realFile.files[0] == undefined) {
-            alert(' فایلی وجود ندارد');
+            alert('There is no file!');
             return;
         }
         forms.each(function (index, elm) {
@@ -200,7 +185,7 @@
                     }
                     if (data.success) {
                         fileUploader.insideLoading("doc-data", false)
-                        alert(' عملیات با موفقیت انجام شد');
+                        alert('Successful');
                         documentManagement.onLoad();
                         currentFile = undefined;
                     }
