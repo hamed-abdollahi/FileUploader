@@ -9,6 +9,7 @@
         formData = new FormData();
     var init = function (arr) {
         fileExtentionsArr = arr;
+        onLoad();
     }
     var onLoad = function () {
         mainContent = document.getElementById('mainContent');
