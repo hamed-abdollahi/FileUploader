@@ -116,14 +116,6 @@ public ActionResult _AddDocument()
     return PartialView();
 }
 
-[HttpPost]
-public ActionResult loadTable(int? pageNumber = 1, int? pageSize = 10, bool refresh = true)
-{
-    var model = db.loadTable(pageNumber, pageSize);
-    ViewBag.Refresh = refresh ;
-    return PartialView(model);
-}
-
 public ActionResult EditDocument(List<HttpPostedFileBase> FileSelector)
 {
      // do anything with your files
