@@ -156,49 +156,6 @@
             alert(String.format('One error has happened!'))
         });
     }
-        var cnt = 0;
-        var forms = $('.frm');
-        if (realFile.files[0] == undefined) {
-            alert('There is no file!');
-            return;
-        }
-        forms.each(function (index, elm) {
-            var currentForm = elm;
-            if ($(elm).hasClass('done')) return;
-            var formData = new FormData(currentForm);
-            e.preventDefault();
-            var elm = $(currentForm).find('.spin')[0];
-            $.ajax({
-                url: '/document/EditDocument',
-                type: 'POST',
-                dataType: "JSON",
-                data: formData,
-                processData: false,
-                contentType: false,
-                async: true,
-                beforeSend: function () {
-                    fileUploader.insideLoading("doc-data", true)
-                },
-                success: function (data, status) {
-                    if (data == 'UnauthorizedAccess') {
-                        window.location.href = '/account/login';
-                    }
-                    if (data.success) {
-                        fileUploader.insideLoading("doc-data", false)
-                        alert('Successful');
-                        documentManagement.onLoad();
-                        currentFile = undefined;
-                    }
-                    else {
-                        cnt = cnt + 1;
-                    }
-                },
-                error: function (xhr, desc, err) {
-                    cnt = cnt + 1;
-                }
-            });
-        })
-    }
     var getFileExt = function (fileName) {
         var ind = fileName.lastIndexOf('.');
         return fileName.substr((fileName.lastIndexOf('.') + 1));
