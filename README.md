@@ -79,7 +79,13 @@ This File Uploader can help you to upload and send multiple files to server simu
     <button id="return" type="button" class="btn btn-info btn-sm">return</button>
 </div>
 <script>
-    fileUploader.onLoad();
+    var validFileExtentions = [
+          {suffix:'png',fileSize:500},
+          {suffix:'pdf',fileSize:500},
+          {suffix:'zip',fileSize:500},
+          // add other file extentions
+    ]
+    fileUploader.init(validFileExtentions);
 
     $('body').on('click', '.box', function (e) {
         e.stopPropagation();
